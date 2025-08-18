@@ -20,6 +20,7 @@ int main() {
     char cidade1[50];
     float area1, pib1;
     int populacao1, pontos1;
+    float densidade1, pibpercapita1;
 
     // Variáveis da Carta 2
 
@@ -28,6 +29,7 @@ int main() {
     char cidade2[50];
     float area2, pib2;
     int populacao2, pontos2;
+    float densidade2, pibpercapita2;
 
     // Cadastro das Cartas:
     // Sugestão: Utilize a função scanf para capturar as entradas do usuário para cada atributo.
@@ -58,6 +60,11 @@ int main() {
     printf("Digite o Número de Pontos Turísticos: ");
     scanf("%d", &pontos1);
 
+    // Cálculos da Densidade Populacional e PIB per Capita da Carta 1
+
+    densidade1 = populacao1 / area1;
+    pibpercapita1 = (pib1 * 1000000000) / populacao1;
+
     // Entrada de dados da Carta 2
 
     printf("Carta 2\n");
@@ -83,11 +90,18 @@ int main() {
     printf("Digite o Número de Pontos Turísticos: ");
     scanf("%d", &pontos2);
 
+    // Cálculos da Densidade Populacional e PIB per Capita da Carta 2
+
+    densidade2 = populacao2 / area2;
+    pibpercapita2 = (pib2 * 1000000000) / populacao2;
+
     // Exibição dos Dados das Cartas:
     // Sugestão: Utilize a função printf para exibir as informações das cartas cadastradas de forma clara e organizada.
     // Exiba os valores inseridos para cada atributo da cidade, um por linha.
     
     // Dados da Carta 1
+
+    printf("\n");
 
     printf("Carta 1:\n");
 
@@ -98,6 +112,8 @@ int main() {
     printf("Área: %.2f km²\n", area1);
     printf("PIB: %.2f bilhões de reais\n", pib1);
     printf("Número de Pontos Turísticos: %d\n", pontos1);
+    printf("Densidade Populacional: %.2f hab/km²\n", densidade1);
+    printf("PIB per Capita: %.2f reais\n", pibpercapita1);
 
     printf("\n");
 
@@ -112,6 +128,8 @@ int main() {
     printf("Área: %.2f km²\n", area2);
     printf("PIB: %.2f bilhões de reais\n", pib2);
     printf("Número de Pontos Turísticos: %d\n", pontos2);
+    printf("Densidade Populacional: %.2f hab/km²\n", densidade2);
+    printf("PIB per Capita: %.2f reais\n", pibpercapita2);
 
     return 0;
 }
